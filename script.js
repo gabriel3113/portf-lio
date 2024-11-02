@@ -1,16 +1,26 @@
 var menu = document.querySelector('#menu-bars');
-var header = document.querySelector('header');
-var cursor1 = document.querySelector('.cursor-1');
-var cursor2 = document.querySelector('.cursor-2');
+var navbar = document.querySelector('.navbar');
 
 menu.onclick = () => {
     menu.classList.toggle('fa-times');
-    header.classList.toggle('active');
+    navbar.classList.toggle('active');
 }
 
-menu.onscroll = () => {
+window.onscroll = () => {
     menu.classList.remove('fa-times');
-    header.classList.remove('active');
+    navbar.classList.remove('active');
 }
 
+// Expandir e recolher categorias de projetos
+document.querySelectorAll('.project-category h2').forEach(categoryHeader => {
+    categoryHeader.addEventListener('click', () => {
+        categoryHeader.parentElement.classList.toggle('active');
+    });
+});
 
+// Expandir e recolher detalhes dos projetos individuais
+document.querySelectorAll('.project-item h3').forEach(projectHeader => {
+    projectHeader.addEventListener('click', () => {
+        projectHeader.parentElement.classList.toggle('active');
+    });
+});
