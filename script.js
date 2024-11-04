@@ -10,7 +10,7 @@ window.onscroll = () => {
     menu.classList.remove('fa-times');
     navbar.classList.remove('active');
 }
-
+// ola
 // Expandir e recolher categorias de projetos
 document.querySelectorAll('.project-category h2').forEach(categoryHeader => {
     categoryHeader.addEventListener('click', () => {
